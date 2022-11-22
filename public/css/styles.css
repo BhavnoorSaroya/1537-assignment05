@@ -1,0 +1,508 @@
+:root {
+    --main-radius: 5px;
+    --main-padding: 0px;
+}
+
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap'); */
+
+
+@font-face {
+    font-family: 'poor_storyregular';
+    src: url('poorstory-regular-webfont.woff2') format('woff2'),
+         url('poorstory-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+#vhead {
+    display: none;
+    grid-area: vhead;
+    color: #fff;
+    background: rgba(0, 0, 0, 1);
+    margin: 0%;
+    text-align: left;
+    border-radius: 5px;
+}
+
+#vdesc {
+    display: none;
+    grid-area: vdesc;
+    color: #000000;
+    background: rgba(255, 255, 255, 1);
+    text-align: left;
+    margin: 0%;
+    border-radius: 5px;
+}
+
+#vcredit {
+    display: none;
+    grid-area: vcredit;
+    color: #f0ffff;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 0%;
+    border-radius: 5px;
+}
+
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 20% 30% 15% 45% 18% 40%;
+    grid-template-areas:
+        "dot main main main main"
+        "nav main main main main"
+        "nav content0 content0 content0 content0"
+        "nav content1 content2 content3 content4"
+        "nav content1 content2 content3 content4"
+        "footer footer footer footer footer";
+    grid-gap: 0.2rem;
+    text-align: center;
+    position: relative;
+}
+
+#maincaption {
+    position: relative;
+    bottom: 10%;
+    right: 35%;
+    color: #18ffff;
+
+}
+
+
+
+#prusa {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+
+}
+
+nav {
+    grid-area: nav;
+    background: #a7ffeb;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "a1"
+        "a2"
+        "a3"
+        "a4";
+    text-align: left;
+    position: relative;
+}
+
+main {
+    grid-area: main;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+
+    background: url('https://cdn.backend.prusa3d.com/wp-content/uploads/MK3S-prechod-2048x602.jpg') center center;
+    background-size: cover;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 60% 12% 7% 10% 10%;
+    grid-template-areas:
+        ". . . . . ."
+        "maincap maincap . . . ."
+        "maindescription maindescription maindescription . . ."
+        ". . . . . ."
+        ". . . . . cornertext";
+}
+
+
+#sidebar {
+    background: #18ffff;
+    grid-area: sidebar;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+
+}
+
+#content0 {
+    background: #4f8677;
+    grid-area: content0;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1.5fr;
+    grid-template-areas:
+        "but1 but2 but3 but4"
+        "form form form form";
+
+}
+
+
+
+#content1 {
+    background: #6fffd2;
+    grid-area: content1;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+
+
+}
+
+#content2 {
+    background: #64ffda;
+    grid-area: content2;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#content3 {
+    background: #73ffba;
+    grid-area: content3;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#content4 {
+    background: #64ffda;
+    grid-area: content4;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+footer {
+    background: #1de9b6;
+    grid-area: footer;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+.dot {
+    font-family: 'poorstory_regular', cursive;
+    font-size: large;
+    grid-area: dot;
+    padding-left: 13%;
+    padding-top: 15%;
+    padding-right: 13%;
+    padding-bottom: 15%;
+    background-color: #bbb;
+    border-radius: 100%;
+
+
+    display: inline-block;
+}
+
+#maincap {
+    grid-area: maincap;
+    color: #f0ffff;
+    background: rgba(255, 255, 255, 0);
+    margin: 0%;
+
+}
+
+#maindescription {
+    grid-area: maindescription;
+    background-color: #f0ffff;
+    margin: 0%;
+}
+
+
+
+#anchor1 {
+    grid-area: a1;
+    color: black;
+}
+
+#form {
+    grid-area: form;
+}
+
+
+#anchor2 {
+    grid-area: a2;
+    color: black;
+}
+
+#anchor3 {
+    grid-area: a3;
+    color: black;
+}
+
+#anchor4 {
+    grid-area: a4;
+    color: black;
+}
+
+
+#but1 {
+    width: 100%;
+}
+
+#but2 {
+    width: 100%;
+}
+
+#but3 {
+    width: 100%;
+}
+
+#but4 {
+    width: 100%;
+}
+
+button {
+    color: #18ffff;
+    background: #000000;
+    border: #f0ffff;
+    border-radius: var(--main-radius);
+    padding: 2%;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: #3197e4;
+}
+
+#sub {
+    padding: 1%;
+}
+
+
+
+#cornertext {
+    grid-area: cornertext;
+    background: rgba(255, 255, 255, 0.538);
+    border-radius: var(--main-radius);
+    margin: 0%;
+}
+
+figure {
+    text-align: left;
+}
+
+
+.img {
+    width: 100%;
+    border: thin #c0c0c0 solid;
+    margin: auto;
+    padding: 5px;
+    border-radius: var(--main-radius);
+    object-fit: contain;
+}
+
+#linkedin {
+    text-align: left;
+}
+
+#author {
+    text-align: left;
+}
+
+#share {
+    text-align: right;
+    padding: 1px;
+}
+
+
+
+@media only screen and (max-width: 1280px) {
+    .container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 20% 35% 25% 58% 20%;
+        grid-template-areas:
+            "dot nav nav nav"
+            "main main main main"
+            "content0 content0 content0 content0"
+            "content1 content2 content3 content4"
+            "footer footer footer footer";
+
+    }
+
+    #maindescription {
+        display: none;
+    }
+
+    #maincap {
+        display: none;
+    }
+
+    #cornertext {
+        display: none;
+    }
+
+    #vhead {
+        display: block;
+    }
+
+    #vdesc {
+        display: block;
+    }
+
+    #vcredit {
+        display: block;
+    }
+
+
+
+    main {
+        background: url('../../img/voron.jpg') center center;
+        background-size: cover;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 60% 12% 7% 10% 10%;
+        grid-template-areas:
+            ". . . . . ."
+            "vhead vhead . . . ."
+            "vdesc vdesc vdesc . . ."
+            ". . . . . ."
+            ". . . . . vcredit";
+
+    }
+
+
+
+    .dot {
+        grid-area: dot;
+        padding-left: 13%;
+        padding-top: 15%;
+        padding-right: 13%;
+        padding-bottom: 15%;
+        background-color: #bbb;
+        border-radius: 100%;
+        display: inline-block;
+    }
+
+    nav {
+        grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "a1 a2 a3 a4";
+    }
+
+    #maincaption {
+        position: relative;
+        bottom: 15%;
+        right: 35%;
+        color: #18ffff;
+    }
+
+    #anchor5 {
+        display: none;
+    }
+
+
+
+}
+
+@media only screen and (max-width: 700px) {
+
+
+    #vhead {
+        display: block;
+        grid-area: vhead;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.8);
+        margin: 0%;
+        text-align: left;
+        border-radius: 5px;
+    }
+
+    #vdesc {
+        display: block;
+        grid-area: vdesc;
+        color: #000000;
+        background: rgba(255, 255, 255, 0.6);
+        text-align: left;
+        margin: 0%;
+        border-radius: 5px;
+    }
+
+    #vcredit {
+        display: none;
+        grid-area: vcredit;
+        color: #f0ffff;
+        background: rgba(255, 255, 255, 0.5);
+        margin: 0%;
+        border-radius: 5px;
+    }
+
+
+
+    main {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 60% 12% 7% 15% 10%;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 60% 12% 7% 13% 13%;
+        grid-template-areas:
+            ". . . . . ."
+            ". . . . . ."
+            ". . . . . ."
+            "vhead vhead vhead vhead vhead vhead"
+            "vdesc vdesc vdesc vdesc vdesc vdesc";
+    }
+
+
+    .container {
+        height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10% 20% 60% 15% 60% 80% 60% 60% 30%;
+        grid-template-areas:
+            "nav"
+            "dot"
+            "main"
+            "content0"
+            "content1"
+            "content2"
+            "content3"
+            "content4"
+            "footer";
+    }
+
+    .dot {
+
+        grid-area: dot;
+        padding-left: 6%;
+        padding-top: 7%;
+        padding-right: 6%;
+        padding-bottom: 7%;
+        background-color: #bbb;
+        border-radius: 100%;
+
+
+        display: inline-block;
+    }
+
+    #maincaption {
+        position: relative;
+        bottom: 20%;
+        right: 25%;
+        color: #18ffff;
+    }
+
+    #anchor5 {
+        display: none;
+    }
+
+    #maindescription {
+        display: none;
+    }
+
+    #maincap {
+        display: none;
+    }
+
+    #cornertext {
+        display: none;
+    }
+
+}
