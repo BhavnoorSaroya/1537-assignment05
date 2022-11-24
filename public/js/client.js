@@ -40,27 +40,28 @@ ready(function () {
     //  /path-to?key2=value1&key2=value2&key3=value3
     /*  { key1: value1, key2: value2, key3: value3 }
      */
-    document.querySelector("#weekdaysJSON").addEventListener("click", function (e) {
-        let something = null;
-        ajaxGET("/weekdays?format=json", function (data) {
-            console.log("Before parsing", data);
-            // this call is JSON so we have to parse it:
-            let parsedData = JSON.parse(data);
-            something = parsedData;
-            console.log("what is something in the AJAX call?", something);
-            console.log("Before parsing", parsedData);
-            let str = "<ol>"
-            for (let i = 0; i < parsedData.length; i++) {
-                str += "<li>" + parsedData[i] + "</li>";
-            }
-            str += "</ol>";
-            document.getElementById("weekdays-json").innerHTML = str;
-        });
-        console.log("what is something?", something);
-    });
+    // document.querySelector("#weekdaysJSON").addEventListener("click", function (e) {
+    //     let something = null;
+    //     ajaxGET("/weekdays?format=json", function (data) {
+    //         console.log("Before parsing", data);
+    //         // this call is JSON so we have to parse it:
+    //         let parsedData = JSON.parse(data);
+    //         something = parsedData;
+    //         console.log("what is something in the AJAX call?", something);
+    //         console.log("Before parsing", parsedData);
+    //         let str = "<ol>"
+    //         for (let i = 0; i < parsedData.length; i++) {
+    //             str += "<li>" + parsedData[i] + "</li>";
+    //         }
+    //         str += "</ol>";
+    //         document.getElementById("weekdays-json").innerHTML = str;
+    //     });
+    //     console.log("what is something?", something);
+    // }); 
 
     document.querySelector("#weekdaysHTML").addEventListener("click", function (e) {
-        ajaxGET("/weekdays?format=html", function (data) {
+        ajaxGET("/printerdata?format=html", function (data) {
+            console.log("HTML button clicked");
             console.log(data);
             // since it's HTML, let's drop it right in
             document.getElementById("weekdays-html").innerHTML = data;
@@ -70,24 +71,27 @@ ready(function () {
     // let's wire our ajax call function to an mouse click so we get data
     // when the user clicks
     document.querySelector("#marker").addEventListener("click", function (e) {
-        ajaxGET("/markers", function (data) {
+        ajaxGET("/printerdatajson", function (data) {
             //console.log("before parsing", data);
             // this call is JSON so we have to parse it:
+            console.log("json button clicked");
             let parsedData = JSON.parse(data);
             let str = "<table>";
             for(let i = 0; i < parsedData.length; i++) {
                 let item = parsedData[i];
-                str += "<tr><td>" + item["title"] + "</td><td>" + item["lat"] + "</td><td>" + item["lng"]
-                    + "</td><td>" + item["description"] + "</td></tr><tr>";
+                str += "<tr><td>" + item["Printer"] + "</td><td>" + item["Type"] + "</td><td>" + item["Style"]
+                    + "</td><td>"+ item["Material"] + "</td><td>" + item["Firmware"] + "</td></tr>";
             }
             str += "</table>";
             let d1 = document.createElement("div");
+            //let d1 = document.getElementById('footer').appendChild("div");  
+            //d1.setAttribute('id','json-data');//set the id of the new div for css purposes
             d1.innerHTML = str;
-            document.body.appendChild(d1);
+            //document.body.appendChild(d1);
+            document.getElementById("marker-data").innerHTML = str;
             console.log("after parsing", parsedData);
         });
     });
-
 });
 
 // callback function declaration
@@ -97,6 +101,6 @@ function ready(callback) {
         console.log("ready state is 'complete'");
     } else {
         document.addEventListener("DOMContentLoaded", callback);
-        console.log("Listener was invoked");
+        //console.log("Listener was invoked");
     }
 }

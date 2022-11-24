@@ -21,9 +21,9 @@ app.get("/", function (req, res) {
     res.send(doc);
 });
 
-app.get("/markers", function (req, res) {
+app.get("/printerdatajson", function (req, res) {
 
-    let doc = fs.readFileSync("./app/data/google-map-markers.js", "utf8");
+    let doc = fs.readFileSync("./app/data/printerdata.js", "utf8");
     res.setHeader("Content-Type", "application/json");
     // just send the text stream
     res.send(doc);
@@ -33,7 +33,7 @@ app.get("/markers", function (req, res) {
 /*
  * This one accepts a query string
  */
-app.get("/weekdays", function (req, res) {
+app.get("/printerdata", function (req, res) {
 
     let formatOfResponse = req.query["format"];
 

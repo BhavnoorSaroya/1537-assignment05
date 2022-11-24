@@ -11,7 +11,7 @@
 @font-face {
     font-family: 'poor_storyregular';
     src: url('poorstory-regular-webfont.woff2') format('woff2'),
-         url('poorstory-regular-webfont.woff') format('woff');
+        url('poorstory-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -59,13 +59,14 @@
     display: grid;
     height: 100vh;
     grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 20% 30% 15% 45% 18% 40%;
+    grid-template-rows: 20% 30% 15% 45% 18% 80% 80%;
     grid-template-areas:
         "dot main main main main"
         "nav main main main main"
         "nav content0 content0 content0 content0"
         "nav content1 content2 content3 content4"
         "nav content1 content2 content3 content4"
+        "footer footer footer footer footer"
         "footer footer footer footer footer";
     grid-gap: 0.2rem;
     text-align: center;
@@ -315,6 +316,57 @@ figure {
 }
 
 
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+tr:nth-child(odd) {
+    background-color: #c0c0c0;
+}
+
+tbody>tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+tbody>tr:nth-child(odd) {
+    background-color: #c0c0c0;
+}
+
+body {
+    background-color: #1de9b6
+}
+
+
+input[type=submit] {
+    color: #18ffff;
+    background: #000000;
+    border: #f0ffff;
+    border-radius: var(--main-radius);
+    padding: 2%;
+    transition-duration: 0.4s;
+}
+
+input[type=submit]:hover {
+    background-color: #3197e4;
+}
+
+.ajax-title{
+    font-family: 'poorstory_regular', cursive;
+    font-size: large;
+}
 
 @media only screen and (max-width: 1280px) {
     .container {
@@ -505,4 +557,14 @@ figure {
         display: none;
     }
 
+
+}
+
+html {
+    position: relative;
+}
+
+#json-data {
+    position: absolute;
+    bottom: 0;
 }
